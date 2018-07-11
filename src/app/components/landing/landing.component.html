@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="card">
+    <div class="movie-item" *ngFor="let movie of movies">
+      <img src="{{movie.Poster}}">
+      <a routerLink="{{'/' + Paths.Movies + '/' + movie.imdbID}}">{{movie.Title}} ({{movie.Year}})</a>
+    </div>
+  </div>
+</div>

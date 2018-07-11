@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="content">
+    <a routerLink="{{'/' + Paths.Favorites}}" style="margin-right: 24px">Любимые</a>
+    <div style="position: relative;">
+      <input type="text" (keyup.enter)="loadMoviesAsync($event)" (keyup)="submitAsync($event)" placeholder="Введи название" matInput [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let movie of movies" [value]="movies">
+          {{movie}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+  </div>
+</div>

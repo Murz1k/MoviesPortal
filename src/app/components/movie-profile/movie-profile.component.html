@@ -1,0 +1,31 @@
+<div class="content">
+  <div *ngIf="movie" class="card">
+    <div class="movie-title">{{movie.Title}}</div>
+    <div class="movie-poster">
+      <img src="{{movie.Poster}}">
+      <i (click)="changeFavorite()" *ngIf="isFavorite" class="material-icons">favorite</i>
+      <i (click)="changeFavorite()" *ngIf="!isFavorite" class="material-icons">favorite_border</i>
+    </div>
+    <div class="movie-info">
+      <div *ngIf="!stars">
+        <i class="material-icons">star_border</i>
+        <i class="material-icons">star_border</i>
+        <i class="material-icons">star_border</i>
+        <i class="material-icons">star_border</i>
+        <i class="material-icons">star_border</i>
+      </div>
+      <div *ngIf="stars">
+        <i *ngFor="let scoreStar of stars" class="material-icons">
+          {{scoreStar.isFull ? 'star' : ''}}
+          {{scoreStar.isEmpty ? 'star_border' : ''}}
+          {{scoreStar.isHalf ? 'star_half' : ''}}
+        </i>
+      </div>
+      <div>{{movie.imdbRating}}/10 ({{movie.imdbVotes}})</div>
+      <div><strong>Жанр:</strong> {{movie.Genre}}</div>
+      <div><strong>Дата выпуска:</strong> {{movie.Released}}</div>
+      <div><strong>Страна:</strong> {{movie.Country}}</div>
+      <p class="movie-description">{{movie.Plot}}</p>
+    </div>
+  </div>
+</div>
