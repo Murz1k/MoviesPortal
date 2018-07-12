@@ -14,10 +14,10 @@ export class LandingComponent implements OnInit {
   public Paths = Paths;
 
   constructor(private moviesService: MoviesService) {
-    this.moviesService.searchChanged.subscribe(async (data) => await this.updateDataAsync(data));
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.updateDataAsync('Batman');
   }
 
   async updateDataAsync(search: string) {

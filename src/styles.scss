@@ -14,3 +14,33 @@ body {
   padding: 24px;
   box-shadow: 0 1px 6px rgba(57, 73, 76, .35);
 }
+
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000
+}
+
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border- box;
+  z-index: 1000
+}
+
+.mat-option {
+  background-color: white;
+  padding: 0px !important;
+  .mat-option-text {
+    padding: 0 16px;
+  }
+  :hover {
+    background-color: #dedede;
+  }
+}

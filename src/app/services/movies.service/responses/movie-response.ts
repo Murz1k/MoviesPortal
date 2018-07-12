@@ -1,7 +1,6 @@
 export interface MovieResponse {
   Actors: string;
   Country: string;
-  Genre: string;
   Plot: string;
   imdbRating: string;
   imdbVotes: string;
